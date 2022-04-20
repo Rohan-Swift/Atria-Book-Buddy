@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Atria Book Buddy</string>
+    <string name="todo">todo</string>
+    <string name="enter_usn">Enter USN</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="submit">Submit</string>
+    <string name="sign_up_now">Sign up now!</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="department_of_library_and_information">Department of Library and Information</string>
+    <string name="todo1">TODO</string>
+    <string name="todo2">TODO</string>
+    <string name="admin_login"><![CDATA[Admin Login >]]></string>
+    <string name="already_a_user_sign_in_instead">Already a user? Sign in instead</string>
+    <string name="submit2">submit</string>
+    <string name="signup_today">Signup today!</string>
+    <string name="enter_password1">Enter Password</string>
+    <string name="enter_phone_number">Enter Phone Number</string>
+    <string name="enter_name">Enter Name</string>
+    <string name="sign_in_instead">Sign in instead?</string>
+    <string name="enter_username">Enter username</string>
+    <string name="enter_password2">Enter Password</string>
+    <string name="welcome_admin">Welcome Admin,</string>
+    <string name="submit3">submit</string>
+    <string name="todo3">TODO</string>
+    <string name="log_in">Log in</string>
+</resources>

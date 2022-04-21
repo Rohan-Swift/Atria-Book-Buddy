@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AtriaBookBuddy">
         <activity
+            android:name=".studentAccess"
+            android:exported="false" />
+        <activity
+            android:name=".adminIssueReturn"
+            android:exported="false" />
+        <activity
             android:name=".AdminLogin"
             android:exported="false" />
         <activity

@@ -24,4 +24,12 @@
     <string name="todo3">TODO</string>
     <string name="log_in">Log in</string>
     <string name="log_in_as_a_student"><![CDATA[<Log in as a Student]]></string>
+    <string name="student_access_page">Student Access Page</string>
+    <string name="books">Books</string>
+    <string name="journals">Journals</string>
+    <string name="admin_issue_and_return">Admin Issue and return</string>
+    <string name="issue">Issue</string>
+    <string name="RETURN">return</string>
+    <string name="barcode_text">Barcode Text</string>
+    <string name="system_time">System Time</string>
 </resources>

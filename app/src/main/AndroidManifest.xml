@@ -3,6 +3,14 @@
     package="com.example.atriabookbuddy">
 
 
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -10,8 +18,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AtriaBookBuddy">
-
-
+        <activity
+            android:name=".adminBookReturn"
+            android:exported="false" />
+        <activity
+            android:name=".adminBookIssue"
+            android:exported="false" />
         <activity
             android:name=".studentAccess"
             android:exported="false" />
@@ -24,6 +36,11 @@
         <activity
             android:name=".SignUp"
             android:exported="false" />
+
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true">

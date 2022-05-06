@@ -23,13 +23,13 @@ public class adminIssueReturn extends AppCompatActivity {
 
 
         bookIssuebtn.setOnClickListener(v -> {
-            //Intent i= new Intent(adminIssueReturn.this, bookIssue.class);
-            //startActivity(i);
+            Intent i= new Intent(adminIssueReturn.this, adminBookIssue.class);
+            startActivity(i);
         });
 
         bookReturnbtn.setOnClickListener(v -> {
-            //Intent i= new Intent(adminIssueReturn.this, bookReturn.class);
-            //startActivity(i);
+            Intent i= new Intent(adminIssueReturn.this, adminBookReturn.class);
+            startActivity(i);
         });
     }
 }

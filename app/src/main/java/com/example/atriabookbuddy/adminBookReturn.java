@@ -1,9 +1,11 @@
 package com.example.atriabookbuddy;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.media.ToneGenerator;
@@ -11,17 +13,26 @@ import android.os.Bundle;
 import android.util.SparseArray;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.Detector;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.google.android.gms.vision.barcode.BarcodeDetector;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.util.Objects;
 
 public class adminBookReturn extends AppCompatActivity {
+
+    FirebaseDatabase db= FirebaseDatabase.getInstance();
+    DatabaseReference b1Num= db.getReference("books").child("Book1").child("Quantity");
 
     private SurfaceView surfaceView;
     private BarcodeDetector barcodeDetector;
@@ -29,8 +40,10 @@ public class adminBookReturn extends AppCompatActivity {
     private static final int REQUEST_CAMERA_PERMISSION = 201;
     //This class provides methods to play DTMF tones
     private ToneGenerator toneGen1;
+    int num1, code;
     private TextView barcodeText;
     private String barcodeData;
+    Button returnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +54,8 @@ public class adminBookReturn extends AppCompatActivity {
         toneGen1 = new ToneGenerator(AudioManager.STREAM_MUSIC,     100);
         surfaceView = findViewById(R.id.surface_view);
         barcodeText = findViewById(R.id.barcode_text);
+        returnBack=findViewById(R.id.returnSub);
+
         kelsaShuru();
     }
 
@@ -107,11 +122,13 @@ public class adminBookReturn extends AppCompatActivity {
                                 barcodeText.removeCallbacks(null);
                                 barcodeData = barcodes.valueAt(0).email.address;
                                 barcodeText.setText(barcodeData);
+                                code= Integer.parseInt(barcodeData);
                                 toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
                             } else {
 
                                 barcodeData = barcodes.valueAt(0).displayValue;
                                 barcodeText.setText(barcodeData);
+                                code= Integer.parseInt(barcodeData);
                                 toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
 
                             }
@@ -120,6 +137,31 @@ public class adminBookReturn extends AppCompatActivity {
 
                 }
             }
+        });
+        b1Num.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                num1 = dataSnapshot.getValue(Integer.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        returnBack.setOnClickListener(v -> {
+
+
+            if(code==12345)
+            {
+                num1=num1+1;
+                b1Num.setValue(num1);
+            }
+
+
+            startActivity(new Intent(adminBookReturn.this, adminIssueReturn.class));
+            finish();
         });
     }
 }

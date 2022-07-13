@@ -8,7 +8,7 @@
     tools:context=".studentBookNumber">
 
     <TextView
-        android:id="@+id/dbmsNum"
+        android:id="@+id/book3Num"
         android:layout_width="47dp"
         android:layout_height="34dp"
         android:textSize="25sp"
@@ -21,7 +21,7 @@
         app:layout_constraintVertical_bias="0.461" />
 
     <TextView
-        android:id="@+id/osNum3"
+        android:id="@+id/book4Num"
         android:layout_width="47dp"
         android:layout_height="34dp"
         android:textSize="25sp"
@@ -36,8 +36,8 @@
     <TextView
         android:id="@+id/book4"
         android:layout_width="214dp"
-        android:layout_height="50dp"
-        android:text="RPA"
+        android:layout_height="62dp"
+        android:text="Data Communication"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -48,7 +48,7 @@
         app:layout_constraintVertical_bias="0.616" />
 
     <TextView
-        android:id="@+id/osNum"
+        android:id="@+id/book2Num"
         android:layout_width="47dp"
         android:layout_height="34dp"
         android:textSize="25sp"
@@ -64,7 +64,7 @@
         android:id="@+id/book1"
         android:layout_width="190dp"
         android:layout_height="45dp"
-        android:text="Data Structures:"
+        android:text="Java"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,7 +75,7 @@
         app:layout_constraintVertical_bias="0.21" />
 
     <TextView
-        android:id="@+id/dsaNum"
+        android:id="@+id/book1Num"
         android:layout_width="47dp"
         android:layout_height="34dp"
         android:textSize="25sp"
@@ -91,7 +91,7 @@
         android:id="@+id/book2"
         android:layout_width="214dp"
         android:layout_height="50dp"
-        android:text="Operating System:"
+        android:text="OOC with C++"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +105,7 @@
         android:id="@+id/book3"
         android:layout_width="214dp"
         android:layout_height="50dp"
-        android:text="DBMS"
+        android:text="Unix"
         android:textSize="25sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"

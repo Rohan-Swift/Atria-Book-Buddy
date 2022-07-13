@@ -40,7 +40,7 @@
         android:layout_width="294dp"
         android:layout_height="55dp"
         android:background="#EDE7E7"
-        android:hint="@string/enter_usn"
+        android:hint="@string/enter_email"
         android:textColorHint="#B71C1C"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

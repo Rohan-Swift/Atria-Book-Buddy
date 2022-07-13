@@ -32,4 +32,7 @@
     <string name="RETURN">return</string>
     <string name="barcode_text">Barcode Text</string>
     <string name="system_time">System Time</string>
+    <string name="backkk"><![CDATA[<]]></string>
+    <string name="enter_email">Enter email</string>
+    <string name="enter_email1">Enter email</string>
 </resources>

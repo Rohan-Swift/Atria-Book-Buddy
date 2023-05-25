@@ -33,6 +33,9 @@ public class adminBookIssue extends AppCompatActivity {
 
     FirebaseDatabase db= FirebaseDatabase.getInstance();
     DatabaseReference b1Num= db.getReference("books").child("Book1").child("Quantity");
+    DatabaseReference b2Num= db.getReference("books").child("Book2").child("Quantity");
+    DatabaseReference b3Num= db.getReference("books").child("Book3").child("Quantity");
+    DatabaseReference b4Num= db.getReference("books").child("Book4").child("Quantity");
 
     private SurfaceView surfaceView;
     private BarcodeDetector barcodeDetector;
@@ -41,7 +44,7 @@ public class adminBookIssue extends AppCompatActivity {
     //This class provides methods to play DTMF tones
     private ToneGenerator toneGen1;
     private TextView barcodeText;
-    int num1, quan, code;
+    int num1, num2, num3, num4, quan, code;
     private String barcodeData;
     Button issueBack;
 
@@ -155,12 +158,66 @@ public class adminBookIssue extends AppCompatActivity {
             }
         });
 
+        b2Num.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                num2 = dataSnapshot.getValue(Integer.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        b3Num.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                num3 = dataSnapshot.getValue(Integer.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
+        b4Num.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                num4 = dataSnapshot.getValue(Integer.class);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         issueBack.setOnClickListener(v -> {
 
 
             if(code==12345)
             {
                 num1=num1-1;
+                b1Num.setValue(num1);
+            }
+
+            else if(code==12346)
+            {
+                num2=num2-1;
+                b1Num.setValue(num1);
+            }
+
+            else if(code==12347)
+            {
+                num3=num3-1;
+                b1Num.setValue(num1);
+            }
+
+            else if(code==12348)
+            {
+                num4=num4-1;
                 b1Num.setValue(num1);
             }
 

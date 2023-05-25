@@ -201,19 +201,19 @@ public class adminBookReturn extends AppCompatActivity {
             else if(code==12346)
             {
                 num2=num2+1;
-                b1Num.setValue(num1);
+                b1Num.setValue(num2);
             }
 
             else if(code==12347)
             {
                 num3=num3+1;
-                b1Num.setValue(num1);
+                b1Num.setValue(num3);
             }
 
             else if(code==12348)
             {
                 num4=num4+1;
-                b1Num.setValue(num1);
+                b1Num.setValue(num4);
             }
 
 

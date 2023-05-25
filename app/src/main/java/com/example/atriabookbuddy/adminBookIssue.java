@@ -129,17 +129,14 @@ public class adminBookIssue extends AppCompatActivity {
                             if (barcodes.valueAt(0).email != null) {
                                 barcodeText.removeCallbacks(null);
                                 barcodeData = barcodes.valueAt(0).email.address;
-                                barcodeText.setText(barcodeData);
-                                code= Integer.parseInt(barcodeData);
-                                toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
                             } else {
 
                                 barcodeData = barcodes.valueAt(0).displayValue;
-                                barcodeText.setText(barcodeData);
-                                code= Integer.parseInt(barcodeData);
-                                toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
 
                             }
+                            barcodeText.setText(barcodeData);
+                            code= Integer.parseInt(barcodeData);
+                            toneGen1.startTone(ToneGenerator.TONE_CDMA_PIP, 150);
                         }
                     });
                 }
@@ -206,19 +203,19 @@ public class adminBookIssue extends AppCompatActivity {
             else if(code==12346)
             {
                 num2=num2-1;
-                b1Num.setValue(num1);
+                b1Num.setValue(num2);
             }
 
             else if(code==12347)
             {
                 num3=num3-1;
-                b1Num.setValue(num1);
+                b1Num.setValue(num3);
             }
 
             else if(code==12348)
             {
                 num4=num4-1;
-                b1Num.setValue(num1);
+                b1Num.setValue(num4);
             }
 
 
